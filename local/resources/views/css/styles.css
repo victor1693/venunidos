@@ -3,15 +3,17 @@
     border-left: 1px solid #e1e4e8;
     border-right: 1px solid #e1e4e8;
 }
+.skin-black .main-header .navbar .nav>li>a:focus, .skin-black .main-header .navbar .nav .open>a:focus {
+    background-color: #24292e;
+}
 .skin-black .main-header .navbar .nav>li>a {
     color: #c8c9ca;
 }
 .skin-black .main-header .navbar .nav>li>a:hover {
     background-color: #24292e;
 }
-.contenido {
-    padding-left: 15%;
-    padding-right: 15%;
+.skin-black .main-header .navbar .nav>li>a:active, .pais>a:active, {
+    background-color: #24292e;
 }
 .sp {
     padding: 0px;
@@ -35,4 +37,10 @@ html {
 }
 .box-publicacion:hover {
     border: 1px solid #65a3ff;
+}
+.navbar-brand {
+    padding: 0px;
+}
+#menu-subbarra>li>a {
+    padding-left: 0px;
 }
