@@ -37,11 +37,12 @@
                         </div>
                         <div class="navbar-collapse collapse " id="navbar7">
                             <ul class="nav navbar-nav " id="menu-subbarra">
-                                <li>
-                                    <a href="#">
-                                        Social
-                                    </a>
-                                </li>
+                                <?php
+                                    if(session()->get('nombre')!==null)
+                                    { 
+                                        echo' <li><a href="perfil">Mi perfil</a></li>';
+                                    }
+                                ?>
                                 <li>
                                     <a href="#">
                                         Trabajos
@@ -54,7 +55,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        Preguntas
+                                        Antes de migrar
                                     </a>
                                 </li>
                                 <li>
@@ -148,10 +149,17 @@
                 </div>
                 <div class="col-sm-8 col-lg-6 sp">
                     <!--Publicacion 1-->
-                    <div class="col-xs-12 sp" style="padding: 20px;">
-                        <textarea class="ta form-control" placeholder="¿Qué hay de nuevo?" style="resize: none;height: 100px;">
-                        </textarea>
-                    </div>
+                    <?php
+                        if(session()->get('id')!==null)
+                        { 
+                            echo' <div class="col-xs-12 sp" style="padding: 20px;">
+                            <textarea class="ta form-control" placeholder="¿Qué hay de nuevo?" style="resize: none;height: 100px;">
+                            </textarea>                         
+                            <button class="btn btn-xs btn-primary pull-right" style="margin-top: 5px;">Postear</button>
+                        </div>';
+                        }
+                    ?>
+                   
                     <div class="col-xs-12 sp publicacion">
                         <div class="box box-publicacion box-widget">
                             <div class="box-header with-border">

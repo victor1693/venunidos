@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use View;
 use DB;
 use Redirect;
-class con_reguser extends Controller {
+class con_user extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -28,7 +28,7 @@ class con_reguser extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create(Request $request)
 	{
 		 
 		if($_POST['p1']!=$_POST['p2'])
@@ -40,8 +40,21 @@ class con_reguser extends Controller {
 		VALUES(null,'".$_POST['nombre']."','','','".$_POST['correo']."','".$_POST['p1']."','11111111')";
 		
 		 	try {
-                 DB::insert($sql);
-
+                DB::insert($sql);
+                $sql="
+				 SELECT id, nombre, correo, clave,COUNT(id) AS contador 
+				 FROM tbl_usuario 
+				 WHERE correo = '".$_POST['correo']."' AND clave ='".$_POST['p1']."'";
+				 
+				 	try {
+		                 $datos=DB::select($sql);
+		                 $request->session()->set('correo', $datos[0]->correo);
+			             $request->session()->set('nombre', $datos[0]->nombre);
+			             $request->session()->set('id', $datos[0]->id);
+			             return Redirect('inicio');
+		            } catch (QueryException $e) {
+		            	return Redirect('error'); 
+		            } 
             } catch (QueryException $e) {
             	return Redirect('error');
                 //dd("Error: ".$e->getMessage());
@@ -55,9 +68,9 @@ class con_reguser extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function perfil()
 	{
-		//
+		dd('perfil');
 	}
 
 	/**

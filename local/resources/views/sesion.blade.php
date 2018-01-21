@@ -13,7 +13,7 @@
         </div>
         <div class="login-box">
             <div class="login-logo">
-                <a href="../../index2.html">
+                <a href="">
                     <b>
                         Admin
                     </b>
@@ -25,15 +25,16 @@
                 <p class="login-box-msg">
                     Sign in to start your session
                 </p>
-                <form action="../../index2.html" method="post">
+                <form action="isu" method="post">
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                     <div class="form-group has-feedback">
-                        <input class="form-control" placeholder="Email" type="email">
+                        <input name="correo" class="form-control" placeholder="Email" type="email">
                             <span class="glyphicon glyphicon-envelope form-control-feedback">
                             </span>
                         </input>
                     </div>
                     <div class="form-group has-feedback">
-                        <input class="form-control" placeholder="Password" type="password">
+                        <input name="pass" class="form-control" placeholder="Password" type="password">
                             <span class="glyphicon glyphicon-lock form-control-feedback">
                             </span>
                         </input>

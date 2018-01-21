@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use View;
+use DB;
+use Redirect;
+
 class con_login extends Controller {
 
 	/**
@@ -22,9 +25,33 @@ class con_login extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function log(Request $request)
 	{
-		//
+		 $datos="";
+		 if(!isset($_POST['correo'])){return Redirect('reguser?error=correo');}
+		 if(!isset($_POST['pass'])){return Redirect('reguser?error=pass');}
+		 $sql="
+		 SELECT id, nombre, correo, clave,COUNT(id) AS contador 
+		 FROM tbl_usuario 
+		 WHERE correo = '".$_POST['correo']."' AND clave ='".$_POST['pass']."'";
+		 
+		 	try {
+                 $datos=DB::select($sql);
+            } catch (QueryException $e) {
+            	return Redirect('error');
+                //dd("Error: ".$e->getMessage());
+            }
+          if($datos[0]->contador)
+          {
+          	$request->session()->set('correo', $datos[0]->correo);
+            $request->session()->set('nombre', $datos[0]->nombre);
+            $request->session()->set('id', $datos[0]->id);
+            return Redirect('inicio');
+          }
+          else
+          {
+          	 return Redirect('inicio?v=false');
+          }
 	}
 
 	/**
@@ -32,9 +59,10 @@ class con_login extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function close(Request $request)
 	{
-		//
+		$request->session()->flush();
+        return redirect('inicio');
 	}
 
 	/**
@@ -43,9 +71,9 @@ class con_login extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		//
+		return "hola";
 	}
 
 	/**

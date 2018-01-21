@@ -12,14 +12,15 @@ class test
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-        if (date('w') === '2') {
-            echo "Es domingo!";
-        } else {
-            echo "No es domingo";
-        }
-        return $next($request);
+   public function handle($request, Closure $next)
+    {    
+         
+         if ($request->session()->get('correo')==null)
+        {
+            return redirect('inicio');            
+        } else 
+         
+         return $next($request);
     }
 
 }
