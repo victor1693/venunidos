@@ -155,7 +155,7 @@
                             echo' <div class="col-xs-12 sp" style="padding: 20px;">
                             <textarea class="ta form-control" placeholder="¿Qué hay de nuevo?" style="resize: none;height: 100px;">
                             </textarea>                         
-                            <button class="btn btn-xs btn-primary pull-right" style="margin-top: 5px;">Postear</button>
+                            <button class="btn btn-xs btn-primary pull-right" style="margin-top: 5px;">Publicar</button>
                         </div>';
                         }
                     ?>

@@ -70,7 +70,7 @@ class con_user extends Controller {
 	 */
 	public function perfil()
 	{
-		dd('perfil');
+	 return View('perfil');
 	}
 
 	/**
