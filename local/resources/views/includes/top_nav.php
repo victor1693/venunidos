@@ -4,13 +4,7 @@
         <!-- Sidebar toggle button-->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <li class="user user-menu ">
-                    <a href="inicio" style="border: 0px;">
-                        <span class=" ">
-                            Inicio
-                        </span>
-                    </a>
-                </li> 
+                
                     <?php
                         if(session()->get('id')!==null)
                         { 
@@ -21,7 +15,7 @@
                                         </span>
                                     </a>
                                 </li> <li class="user user-menu ">
-                                    <a class="" href="reguser" style="border: 0px;"> 
+                                    <a class="" href="perfil" style="border: 0px;"> 
                                           <img class="user-image" src="https://avatars.articulate.com/user/avatar/8cbfa0d0-b37e-0131-2ee8-22000b2f96a1/micro_1406930863.png">
                                             <span class="hidden-xs">
                                                '.session()->get("nombre").'

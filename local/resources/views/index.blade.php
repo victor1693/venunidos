@@ -14,92 +14,7 @@
             <!-- <div class="contenido" style="background-color: #f7f7f7;padding-bottom: 35px;position: fixed;z-index: 1;width: 100%;">
                 aqui
             </div>-->
-            <div class="col-xs-12 sp " style="position: fixed;z-index: 1;">
-                <div class="col-lg-2 col-sm-0">
-                    <div style="color: #f8f8f8;background-color: #f8f8f8;height: 5px;">
-                        a
-                    </div>
-                </div>
-                <nav class="navbar navbar-default ">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button class="navbar-toggle collapsed" data-target="#navbar7" data-toggle="collapse" type="button">
-                                <span class="sr-only">
-                                    Toggle navigation
-                                </span>
-                                <span class="icon-bar">
-                                </span>
-                                <span class="icon-bar">
-                                </span>
-                                <span class="icon-bar">
-                                </span>
-                            </button>
-                        </div>
-                        <div class="navbar-collapse collapse " id="navbar7">
-                            <ul class="nav navbar-nav " id="menu-subbarra">
-                                <?php
-                                    if(session()->get('nombre')!==null)
-                                    { 
-                                        echo' <li><a href="perfil">Mi perfil</a></li>';
-                                    }
-                                ?>
-                                <li>
-                                    <a href="#">
-                                        Trabajos
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Alquileres
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Antes de migrar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Experiencias
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        Noticias
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="" data-toggle="dropdown" href="#" style="background-color: #f8f8f8;">
-                                        <span class=" fa fa-inbox">
-                                        </span>
-                                        Pais
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#">
-                                                Page 1-1
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Page 1-2
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Page 1-3
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--/.nav-collapse -->
-                    </div>
-                    <!--/.container-fluid -->
-                </nav>
-                
-            </div>
+            <?php include('local/resources/views/includes/sub_header.php');?>
         </div>
         <div class="contenido" style="margin-top: 101px;">
             <div class="col-xs-12 sp " style="margin: 0 auto;background-color: #efefef;">
@@ -107,44 +22,7 @@
                 </div>
                 <div class="col-sm-4 col-lg-2 sp" style="padding-top: 19px;">
                     <div class="box box-solid">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">
-                                Labels
-                            </h3>
-                            <div class="box-tools">
-                                <button class="btn btn-box-tool" data-widget="collapse" type="button">
-                                    <i class="fa fa-minus">
-                                    </i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body no-padding" style="">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-circle-o text-red">
-                                        </i>
-                                        Important
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-circle-o text-yellow">
-                                        </i>
-                                        Promotions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-circle-o text-light-blue">
-                                        </i>
-                                        Social
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /.box-body -->
+                     <?php include('local/resources/views/includes/paises.php');?> 
                     </div>
                 </div>
                 <div class="col-sm-8 col-lg-6 sp">
@@ -155,7 +33,7 @@
                             echo' <div class="col-xs-12 sp" style="padding: 20px;">
                             <textarea class="ta form-control" placeholder="¿Qué hay de nuevo?" style="resize: none;height: 100px;">
                             </textarea>                         
-                            <button class="btn btn-xs btn-primary pull-right" style="margin-top: 5px;">Publicar</button>
+                            <button class="btn btn-xs form-control btn-primary pull-right" style="margin-top: 5px;">Publicar</button>
                         </div>';
                         }
                     ?>

@@ -1,4 +1,4 @@
-<div class="col-xs-12 sp " style="position: fixed;z-index: 1;">
+            <div class="col-xs-12 sp " style="position: fixed;z-index: 1;">
                 <div class="col-lg-2 col-sm-0">
                     <div style="color: #f8f8f8;background-color: #f8f8f8;height: 5px;">
                         a
@@ -22,7 +22,7 @@
                         <div class="navbar-collapse collapse " id="navbar7">
                             <ul class="nav navbar-nav " id="menu-subbarra">
                                 <?php
-                                    if(session()->get('nombre')!==null)
+                                    if(session()->get('id')!==null)
                                     { 
                                         echo'
                                 <li>
@@ -32,19 +32,25 @@
                                 </li>
                                 ';
                                     }
+                                     
                                 ?>
+                                  <li>
+                                    <a href="inicio">
+                                        Inicio
+                                    </a>
+                                </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="trabajos">
                                         Trabajos
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="alquileres">
                                         Alquileres
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="migrar">
                                         Antes de migrar
                                     </a>
                                 </li>
@@ -54,16 +60,17 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="noticia">
                                         Noticias
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="" data-toggle="dropdown" href="#" style="background-color: #f8f8f8;">
-                                        <span class=" fa fa-inbox">
-                                        </span>
-                                        Pais
+                                    <a href="configuracion">
+                                        Configuración
                                     </a>
+                                </li>
+                                <li>
+                                     
                                     <ul class="dropdown-menu">
                                         <li>
                                             <a href="#">

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            AdminLTE 2 | Blank Page
+            Perfil
         </title>
         <?php include('local/resources/views/includes/referencias_top.php');?>
     </head>
@@ -35,7 +35,7 @@
                                     <ul class="list-group list-group-unbordered">
                                         <li class="list-group-item">
                                             <b>
-                                                Followers
+                                                Publicaciones
                                             </b>
                                             <a class="pull-right">
                                                 1,322
@@ -43,7 +43,7 @@
                                         </li>
                                         <li class="list-group-item">
                                             <b>
-                                                Following
+                                                Postulaciones
                                             </b>
                                             <a class="pull-right">
                                                 543
@@ -51,18 +51,14 @@
                                         </li>
                                         <li class="list-group-item">
                                             <b>
-                                                Friends
+                                                Ranking
                                             </b>
                                             <a class="pull-right">
                                                 13,287
                                             </a>
                                         </li>
                                     </ul>
-                                    <a class="btn btn-primary btn-block" href="#">
-                                        <b>
-                                            Follow
-                                        </b>
-                                    </a>
+                                    
                                 </img>
                             </div>
                             <!-- /.box-body -->
@@ -72,7 +68,7 @@
                         <div class="box box-primary">
                             <div class="box-header with-border">
                                 <h3 class="box-title">
-                                    About Me
+                                    Conóceme
                                 </h3>
                             </div>
                             <!-- /.box-header -->
@@ -80,7 +76,7 @@
                                 <strong>
                                     <i class="fa fa-book margin-r-5">
                                     </i>
-                                    Education
+                                    Educación
                                 </strong>
                                 <p class="text-muted">
                                     B.S. in Computer Science from the University of Tennessee at Knoxville
@@ -89,7 +85,7 @@
                                     <strong>
                                         <i class="fa fa-map-marker margin-r-5">
                                         </i>
-                                        Location
+                                        Dirección
                                     </strong>
                                     <p class="text-muted">
                                         Malibu, California
@@ -98,30 +94,19 @@
                                         <strong>
                                             <i class="fa fa-pencil margin-r-5">
                                             </i>
-                                            Skills
-                                        </strong>
-                                        <p>
-                                            <span class="label label-danger">
-                                                UI Design
-                                            </span>
-                                            <span class="label label-success">
-                                                Coding
-                                            </span>
-                                            <span class="label label-info">
-                                                Javascript
-                                            </span>
-                                            <span class="label label-warning">
-                                                PHP
-                                            </span>
-                                            <span class="label label-primary">
-                                                Node.js
-                                            </span>
-                                        </p>
+                                            Edad
+                                        </strong>                                        
+                                        <hr>
+                                        <strong>
+                                            <i class="fa fa-pencil margin-r-5">
+                                            </i>
+                                            Sexo
+                                        </strong>                                        
                                         <hr>
                                             <strong>
                                                 <i class="fa fa-file-text-o margin-r-5">
                                                 </i>
-                                                Notes
+                                                ¿Cómo de describo?
                                             </strong>
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.
