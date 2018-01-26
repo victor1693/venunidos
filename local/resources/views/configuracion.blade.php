@@ -36,12 +36,21 @@
                                         Perfil
                                     </a>
                                 </li>
+                                  <li>
+                                    <a href="#">
+                                        <i class="fa fa-circle-o text-red">
+                                        </i>
+                                        Privacidad
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="#">
                                         <i class="fa fa-circle-o text-yellow">
                                         </i>
                                         Seguridad
                                     </a>
+                                    </li>
+                                    <li>
                                      <a href="#">
                                         <i class="fa fa-circle-o text-yellow">
                                         </i>
