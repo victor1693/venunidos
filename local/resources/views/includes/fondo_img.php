@@ -1,0 +1,2 @@
+<img src="http://www.flisol.org.ve/wp-content/uploads/2015/10/venezuela.png" style="width: 100%;height: 100%;position: fixed;z-index: -1;opacity: 0.2;margin-top: 100px;">
+<!--<img src="local/resources/views/img/fondos/<?php echo rand(0,0);?>.jpg" style="width: 100%;height: 100%;position: fixed;z-index: -1;opacity: 0.5">-->

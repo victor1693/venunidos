@@ -7,13 +7,14 @@
         <?php include('local/resources/views/includes/referencias_top.php');?>
     </head>
     <body class="skin-black fixed">
+    <?php include('local/resources/views/includes/fondo_img.php');?>
         <!-- Site wrapper -->
         <div class="col-xs-12 sp " style="background-color: #e9ebee;margin-top: 50px;">
             <?php include('local/resources/views/includes/top_nav.php');?>            
             <?php include('local/resources/views/includes/sub_header.php');?>
         </div>
         <div class="contenido" style="margin-top: 101px;">
-            <div class="col-xs-12 sp " style="margin: 0 auto;background-color: #efefef;">
+            <div class="col-xs-12 sp " style="margin: 0 auto;">
                 <div class="col-lg-2 col-sm-0">
                 </div>
                 <div class="col-sm-4 col-lg-2 sp" style="padding-top: 19px;">

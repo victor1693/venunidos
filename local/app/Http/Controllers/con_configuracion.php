@@ -16,6 +16,18 @@ class con_configuracion extends Controller {
 	{
 		return View('configuracion');
 	}
+	public function privacidad()
+	{
+		return View('privacidad');
+	}
+	public function seguridad()
+	{
+		return View('seguridad');
+	}
+	public function alertas()
+	{
+		return View('alertas');
+	}
 
 	/**
 	 * Show the form for creating a new resource.

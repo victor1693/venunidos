@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top" style="margin: 0px;background-color: #24292e;">
+    <nav class="navbar navbar-static-top" style="margin: 0px;background-color: #004362;">
         <!-- Sidebar toggle button-->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            Configuración
+            Alertas
         </title>
         <?php include('local/resources/views/includes/referencias_top.php');?>
     </head>
@@ -17,14 +17,15 @@
             <div class="col-xs-12 sp " style="margin: 0 auto;min-height: 650px;">
                 <div class="col-lg-2 col-sm-0">
                 </div>
-                 <?php include('local/resources/views/includes/menu_left_configuraciones.php');?>
+                <?php include('local/resources/views/includes/menu_left_configuraciones.php');?>
+                
                 <div class="col-sm-8 col-lg-6 sp">
                    
 
                      <div class="col-sm-12" style="padding-top: 19px;">
                         <div class="box box-success">
                             <div class="box-header with-border">
-                              <h3 class="box-title">Perfil</h3> 
+                              <h3 class="box-title">Notificaciones</h3> 
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">

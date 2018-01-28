@@ -21,3 +21,13 @@
     $('.ta').val("")
   })
 </script>
+ <script type="text/javascript">
+        $(document).on("scroll", function(){
+        //sacamos el desplazamiento actual de la página
+        var desplazamientoActual = $(document).scrollTop();
+        var margen=desplazamientoActual+"px";
+         if ($(window).width() > 767) { 
+               $(".aside_left").css({"margin-top": margen});
+         }  
+    });        
+</script>

@@ -1,4 +1,4 @@
-<div class=" ">
+<div class=" "  >
 
                     <div class=" text-center " style="padding-top: 8px;padding-bottom: 10px;">
                       <button type="button" class="btn btn-default"><img src="local/resources/views/img/bandera/peru.png" style="width: 20px;height: 20px;"></i>

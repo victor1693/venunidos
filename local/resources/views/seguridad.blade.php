@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            Configuración
+            Seguridad
         </title>
         <?php include('local/resources/views/includes/referencias_top.php');?>
     </head>
@@ -24,7 +24,7 @@
                      <div class="col-sm-12" style="padding-top: 19px;">
                         <div class="box box-success">
                             <div class="box-header with-border">
-                              <h3 class="box-title">Perfil</h3> 
+                              <h3 class="box-title">Seguridad</h3> 
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
@@ -32,12 +32,11 @@
                                   aqui
                              </div>
                              <div class="col-sm-6 sp">
-                                  <label>Nombre</label></br>
-                                  <input type="text" name="nombre" class="form-control input-sm"  >
-                                  <label>Profesión</label></br>
-                                  <input type="text" name="profesion" class="form-control input-sm"  >
-                                  <label>Foto de perfil</label></br>                                   
-                                  <input type="file" name="files[]" class="file input-sm" style="margin-left: -10px;"> 
+                                  <label>Correo</label></br>
+                                  <input type="email" name="correo" class="form-control input-sm"  >
+                                  <label>Clave</label></br>
+                                  <input type="password" name="profesion" class="form-control input-sm"  >
+                                  
                                   <hr>
                                   <div class="text-center"  >
                                     <button class="btn btn-xs btn-primary">Actualizar</button>
