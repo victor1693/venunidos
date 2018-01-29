@@ -14,8 +14,13 @@
 <script src="local/resources/views/dist/js/adminlte.min.js">
 </script>
 <!-- AdminLTE for demo purposes -->
+
+ 
+
 <script src="local/resources/views/dist/js/demo.js">
 </script>
+
+
 <script>
     $(document).ready(function () {
     $('.ta').val("")
