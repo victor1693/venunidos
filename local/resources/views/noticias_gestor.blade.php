@@ -71,28 +71,30 @@
                             </span>
                             <span class="pull-right">
                                 <strong>
-                                    98
+                                    <?php echo $cantidad[0]->cantidad ?>
                                 </strong>
                             </span>
                         </div>
                     </div>
-                    <div class="box box-widget">
+                    <?php
+                        foreach ($datos as $key) {
+                            echo '<div class="box box-widget">
                         <div class="box-header with-border">
                             <div class="user-block">
                                 <span class="username" style="margin-left: 0px;">
-                                    <a href="#">
-                                        Jonathan Burke Jr.
+                                    <a href="noticias/'.$key->url.'">
+                                        '.$key->titulo.'
                                     </a>
                                 </span>
                                 <span class="description" style="margin-left: 0px;">
-                                    Shared publicly - 7:30 PM Today
+                                    Publicado: '.$key->tmp.'
                                 </span>
                             </div>
                             <!-- /.user-block -->
                             <div class="box-tools">
                                 <button class="btn btn-box-tool" type="button">
-                                    <i class="fa fa-eye">
-                                    </i>
+                                    <a href="noticias/'.$key->url.'"><i class="fa fa-eye">
+                                    </i></a>
                                 </button>
                                 <button class="btn btn-box-tool" type="button">
                                     <i class="fa fa-pause">
@@ -108,17 +110,10 @@
                                 </button>
                             </div>
                             <!-- /.box-tools -->
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <!-- post text -->
-                            <p>
-                                Far far away, behind the word mountains, far from the
-                countries Vokalia and Consonantia, there live the blind
-                texts. Separated they live in Bookmarksgrove right at
-                            </p>
-                        </div>
-                    </div>
+                        </div>                        
+                    </div>';
+                        }
+                    ?>
                 </div>
                 <div class="col-lg-2 col-sm-0">
                 </div>

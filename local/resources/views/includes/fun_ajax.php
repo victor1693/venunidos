@@ -41,24 +41,11 @@ function publicar_noticia()
 				titulo: $("#titulo").val(),},			 
 			})
 			  .done(function( datos ) { 
-			  	 $("#detalle").val("");
-				 $("#categoria").val("");
-				 $("#keywords").val("");
-				 $("#alcance").val("");
-				 $("#titulo").val("");
-
-				 
-			  	/*contador=0;
-			    $.each( datos, function( key, value ) { 
-			    	 
-			    		$( "#publicaciones" ).append(publicacion); 
-			    	 	
-
-	            });*/
+			  	location.reload();
 	           }); 
 		}		
 	}
-
+ 
 	function listar_posts(parametro)
 	{
 		$.ajax({

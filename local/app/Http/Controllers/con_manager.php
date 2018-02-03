@@ -30,27 +30,29 @@ class con_manager extends Controller {
 		 if(!isset($_POST['correo'])){return Redirect('reguser?error=correo');}
 		 if(!isset($_POST['pass'])){return Redirect('reguser?error=pass');}
 		 $sql="
-		 SELECT id, nombre, correo, clave,COUNT(id) AS contador 
+		 SELECT id, nombre,pais, correo, clave,COUNT(id) AS contador 
 		 FROM tbl_gestores 
 		 WHERE correo = '".$_POST['correo']."' AND clave ='".$_POST['pass']."'";
 		 
 		 	try {
-                 $datos=DB::select($sql);
+                $datos=DB::select($sql);
+                if($datos[0]->contador)
+		          { 
+		          	$request->session()->set('gestor_correo', $datos[0]->correo);
+		            $request->session()->set('gestor_nombre', $datos[0]->nombre);
+		            $request->session()->set('gestor_id', $datos[0]->id);
+		            $request->session()->set('gestor_pais', $datos[0]->pais);
+		            return Redirect('dash');
+		          }
+		          else
+		          {
+		          	 return Redirect('manager?v=false');
+		          }
+               
             } catch (QueryException $e) {
             	return Redirect('error');
                 //dd("Error: ".$e->getMessage());
-            }
-          if($datos[0]->contador)
-          {
-          	$request->session()->set('gestor_correo', $datos[0]->correo);
-            $request->session()->set('gestor_nombre', $datos[0]->nombre);
-            $request->session()->set('gestor_id', $datos[0]->id);
-            return Redirect('dash');
-          }
-          else
-          {
-          	 return Redirect('manager?v=false');
-          }
+            } 
 	}
 
 	/**
@@ -60,7 +62,18 @@ class con_manager extends Controller {
 	 */
 	public function dash()
 	{
-		return view('dash');
+		
+			try {
+					$sqlNoticial="SELECT count(id) as cantidad FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." ORDER BY tmp DESC";
+		            $datosNoticias=DB::select($sqlNoticial);
+
+		            $vista=View::make('dash');
+                 	$vista->datos=$datosNoticias;
+                 	return $vista;
+			} catch (QueryException $e) {
+				return Redirect('error');
+			}
+		            
 	}
 
 	/**
@@ -83,7 +96,22 @@ class con_manager extends Controller {
 	 */
 	public function noticias()
 	{
-		return view('noticias_gestor');
+
+		try {
+					$sqlNoticial="SELECT * FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." ORDER BY tmp DESC";
+		            $datosNoticias=DB::select($sqlNoticial);
+
+		            $cantidadNoticias="SELECT count(id) as cantidad FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." ORDER BY tmp DESC";
+		            $cantidad=DB::select($cantidadNoticias);
+
+
+		            $vista=View::make('noticias_gestor');
+                 	$vista->datos=$datosNoticias;
+                 	$vista->cantidad=$cantidad; 
+                 	return $vista;
+			} catch (QueryException $e) {
+				return Redirect('error');
+			} 
 	}
 
 	/**

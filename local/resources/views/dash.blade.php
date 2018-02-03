@@ -32,14 +32,14 @@
                           <!-- small box -->
                           <div class="small-box bg-green">
                             <div class="inner">
-                              <h3>65</h3>
+                              <h3><?php echo $datos[0]->cantidad?></h3>
 
                               <p>Noticias</p>
                             </div>
                             <div class="icon">
                               <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="#" class="small-box-footer">
+                            <a href="gnoticias" class="small-box-footer">
                               Ver todo <i class="fa fa-arrow-circle-right"></i>
                             </a>
                           </div>
@@ -49,7 +49,7 @@
                           <!-- small box -->
                           <div class="small-box bg-yellow">
                             <div class="inner">
-                              <h3>65</h3>
+                              <h3>0</h3>
 
                               <p>Publicaciones</p>
                             </div>

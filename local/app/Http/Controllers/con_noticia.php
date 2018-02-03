@@ -32,6 +32,7 @@ class con_noticia extends Controller {
 		  VALUES(null,".session()->get('gestor_id').",".$datos["alcance"].",1,".$datos["categoria"].",'".$datos["titulo"]."','".$datos["detalle"]."','".$this->generarCodigo(8)."','".$datos["keywords"]."',null );";
 			try {
                  $datos=DB::select($sql);  
+                 echo "1";
                  /*$sql="SELECT t1.id_user as id,concat(t2.nombre,' ',t2.apellido) AS nombre,t1.tmp, t1.detalle FROM tbl_post t1 LEFT JOIN tbl_usuario t2 on t1.id_user = t2.id  WHERE t1.id_user=".session()->get('id')." ORDER BY t1.id DESC limit 0,1;";               
        
                  $datos=$datos=DB::select($sql);

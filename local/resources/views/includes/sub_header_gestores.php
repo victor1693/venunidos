@@ -22,21 +22,16 @@
                         <div class="navbar-collapse collapse " id="navbar7">
                             <ul class="nav navbar-nav " id="menu-subbarra">                                 
                                   <li>
-                                    <a href="dash">
+                                    <a href="/venunidos/dash">
                                         Inicio
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="gnoticias">
+                                    <a href="/venunidos/gnoticias">
                                         Noticias
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        Información
-                                    </a>
-                                </li>
-                                 
+                                
                             </ul>
                         </div>
                         <!--/.nav-collapse -->
