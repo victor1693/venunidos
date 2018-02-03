@@ -16,7 +16,49 @@ function endPage(parametro){
  }
 }
 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'); 
-	
+
+//Publicar noticia
+function publicar_noticia()
+	{
+		if($("#alcance").val()==""){alert('Debe seleccionar el alcance de la noticia.');$("#alcance").focus();}
+		else if($("#categoria").val()==""){alert('Debe seleccionar una categoría.');$("#categoria").focus();}
+		else if($("#titulo").val()==""){alert('Colóquele el titulo a la publicación.');$("#titulo").focus();}
+		else if($("#detalle").val()==""){alert('Complete el detalle de la publicación.');$("#detalle").focus();}
+		else if($("#keywords").val()==""){alert('Coloque las palabras clave de esta publicación.');$("#keywords").focus();}
+		
+		else
+		{
+			$.ajax({
+			  method: "POST",
+			  dataType:"json",
+			  url: "noticia",
+			  data: { 
+			_token: CSRF_TOKEN,
+				detalle: $("#detalle").val(),
+				categoria: $("#categoria").val(),
+				keywords: $("#keywords").val(),
+				alcance: $("#alcance").val(),
+				titulo: $("#titulo").val(),},			 
+			})
+			  .done(function( datos ) { 
+			  	 $("#detalle").val("");
+				 $("#categoria").val("");
+				 $("#keywords").val("");
+				 $("#alcance").val("");
+				 $("#titulo").val("");
+
+				 
+			  	/*contador=0;
+			    $.each( datos, function( key, value ) { 
+			    	 
+			    		$( "#publicaciones" ).append(publicacion); 
+			    	 	
+
+	            });*/
+	           }); 
+		}		
+	}
+
 	function listar_posts(parametro)
 	{
 		$.ajax({

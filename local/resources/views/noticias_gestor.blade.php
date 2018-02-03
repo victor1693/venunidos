@@ -24,31 +24,44 @@
                     </div>
                 </div>
                 <div class="col-sm-8 col-lg-6 sp" style="padding-top: 19px;padding-left: 20px;">
-                    <form action="#" method="post">
+                    <form action="noticia" method="post">
                         <div class="col-sm-12 sp" style="margin-bottom: 5px;">
                             <div class="col-sm-4 sp">
-                                <select class="form-control">
-                                    <option>
+                                <select id="alcance" name="alcance" class="form-control">
+                                    <option value="">
                                         Alcance
                                     </option>
-                                    <option>
+                                    <option value="12">
                                         Venezuela
                                     </option>
-                                    <option>
+                                    <option value="247">
                                         Todos los paises
                                     </option>
                                 </select>
                             </div>
+                            <div class="col-sm-4 sp">
+                                <select id="categoria" class="form-control" name="categoria">
+                                    <option value="">
+                                        Categoría
+                                    </option>
+                                    <option value="1">
+                                        General
+                                    </option>
+                                </select>
+                            </div>
                         </div>
-                        <textarea class="form-control ta" style="resize: none;height: 100px; ">
+                        <input id="titulo" name="titulo" class="form-control" name="" placeholder="Título" type="text">
+                        </input>
+                        <textarea id="detalle" name="detalle" class="form-control ta" placeholder="Pega tu puplicación aquí..." style="resize: none;height: 100px; ">
                         </textarea>
+                        <input id="keywords" name="keywords" class="form-control" name="" placeholder="Palabras claves" type="text">
+                        </input>
                     </form>
-                    <a class="btn btn-xs btn-primary" href="https://htmleditor.io/" style="margin-top: 5px;" target="_blank">
-                        Editar noticia
-                    </a>
-                    <a class="btn btn-xs btn-primary pull-right" href="https://htmleditor.io/ " style="margin-top: 5px;" target="_blank">
-                        Publicar
-                    </a>
+                    <div class="text-right">
+                        <buttom id="publicar_noticia" onClick="publicar_noticia()" class="btn btn-xs btn-primary " href="" style="margin-top: 5px;" target="_blank">
+                            Publicar
+                        </buttom>
+                    </div>
                     <div class="box box-widget " style="position: relative; left: 0px; top: 10px;">
                         <div class="box-body">
                             <span style="font-size: 16px;">
@@ -116,5 +129,6 @@
         <!-- Control Sidebar -->
         <!-- ./wrapper -->
         <?php include('local/resources/views/includes/referencias_down.php');?>
+        <?php include('local/resources/views/includes/fun_ajax.php');?>
     </body>
 </html>

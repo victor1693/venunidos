@@ -19,7 +19,8 @@ Route::post('reguser', 'con_user@create'); //registrar usuario
 Route::post('isu', 'con_login@log'); //iniciar sesion usuario
 Route::post('sposts', 'con_inicio@listar'); //iniciar sesion usuario
 
-Route::group(['middleware' =>'test'], function () {
+Route::group(['middleware' =>
+'test'], function () {
 Route::post('test', 'con_inicio@create');
 Route::get('close', 'con_login@close'); //Cierra la sesion
 Route::get('perfil', 'con_user@perfil'); //Perfil del usuario 
@@ -30,7 +31,11 @@ Route::get('manager', 'con_manager@index');
 Route::post('gestores', 'con_manager@log'); //iniciar sesion usuario
 
 Route::group(['middleware' =>'gestores'], function () {
+Route::get('noticias/{id}', 'con_noticia@detalle'); //iniciar sesion usuario
+Route::post('noticia', 'con_noticia@create'); //iniciar sesion usuario
+
 Route::get('dash', 'con_manager@dash');
+
 Route::get('gestor_close', 'con_manager@close'); //Cierra la sesion
 Route::get('gnoticias', 'con_manager@noticias'); //Cierra la sesion
 Route::get('gpost', 'con_manager@post'); //Cierra la sesion
