@@ -39,5 +39,5 @@ Route::get('dash', 'con_manager@dash');
 Route::get('gestor_close', 'con_manager@close'); //Cierra la sesion
 Route::get('gnoticias', 'con_manager@noticias'); //Cierra la sesion
 Route::get('gpost', 'con_manager@post'); //Cierra la sesion
- 
+Route::post('status_noticia', 'con_manager@estados'); //Cierra la sesion
 });

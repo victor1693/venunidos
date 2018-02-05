@@ -1,6 +1,7 @@
 <script type="text/javascript">
 const MARGEN = .1;
 var bandera=0;
+var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'); 
 
 $( document ).ready(function() { 
 	listar_posts(bandera);   
@@ -15,10 +16,31 @@ function endPage(parametro){
 	listar_posts(bandera);
  }
 }
-var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'); 
 
-//Publicar noticia
-function publicar_noticia()
+
+/****************************************/
+// FUNCIONES PARA LAS NOTICIAS
+/****************************************/
+ 
+
+function status_noticia(id,estado) // actualiza lo estados
+	{ 
+			$.ajax({
+			  method: "POST",
+			  dataType:"json",
+			  url: "status_noticia",
+			  data: { 
+			_token: CSRF_TOKEN,
+				identificador: id,
+				valor: estado},			 
+			})
+			  .done(function( datos ) { 
+			  	if(datos==2){alert("La noticia ha sido pausada.");location.reload();}
+			  	if(datos==3){alert("La noticia ha sido eliminada.");location.reload();}
+			  	if(datos==1){alert("Operación realizada con éxito.");location.reload();}
+	           }); 
+	} 
+function publicar_noticia() //Crea la noticia
 	{
 		if($("#alcance").val()==""){alert('Debe seleccionar el alcance de la noticia.');$("#alcance").focus();}
 		else if($("#categoria").val()==""){alert('Debe seleccionar una categoría.');$("#categoria").focus();}
@@ -46,7 +68,11 @@ function publicar_noticia()
 		}		
 	}
  
-	function listar_posts(parametro)
+/****************************************/
+// FUNCIONES PARA LOS POST
+/****************************************/
+
+	function listar_posts(parametro) // LIsta los post de los usuarios
 	{
 		$.ajax({
 		  method: "POST",
@@ -68,7 +94,7 @@ function publicar_noticia()
             });});
 	}
 
-	function c_inicio()
+	function c_inicio() // Crea los post de los usuarios
 	{
 		var v_detalle=$("#post").val();			
 		$.ajax({

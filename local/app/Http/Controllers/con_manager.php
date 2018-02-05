@@ -98,10 +98,10 @@ class con_manager extends Controller {
 	{
 
 		try {
-					$sqlNoticial="SELECT * FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." ORDER BY tmp DESC";
+					$sqlNoticial="SELECT * FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." AND estado <> 3 ORDER BY tmp DESC";
 		            $datosNoticias=DB::select($sqlNoticial);
 
-		            $cantidadNoticias="SELECT count(id) as cantidad FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." ORDER BY tmp DESC";
+		            $cantidadNoticias="SELECT count(id) as cantidad FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." AND estado <> 3 ORDER BY tmp DESC";
 		            $cantidad=DB::select($cantidadNoticias);
 
 
@@ -120,9 +120,15 @@ class con_manager extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function estados()
 	{
-		//
+		try {
+					$sql="UPDATE tbl_noticias SET estado = ".$_POST['valor']." WHERE id= ".$_POST['identificador']." ";
+		            $datos=DB::select($sql);
+  					echo $_POST['valor'];
+			} catch (QueryException $e) {
+					echo 0;
+			}  
 	}
 
 	/**

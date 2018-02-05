@@ -31,6 +31,9 @@
                                     <option value="">
                                         Alcance
                                     </option>
+                                    <option value="89">
+                                        Perú
+                                    </option>
                                     <option value="12">
                                         Venezuela
                                     </option>
@@ -78,6 +81,11 @@
                     </div>
                     <?php
                         foreach ($datos as $key) {
+                            $estado=0;
+                            if($key->estado==2){$estado=1;}
+                            if($key->estado==1){$estado=$key->estado;}
+                            $pausa="";
+                            if($key->estado==2){$pausa="(Pausada)";}
                             echo '<div class="box box-widget">
                         <div class="box-header with-border">
                             <div class="user-block">
@@ -85,6 +93,7 @@
                                     <a href="noticias/'.$key->url.'">
                                         '.$key->titulo.'
                                     </a>
+                                   <span style="font-size:10px;"><strong>'.$pausa.'</strong></span>
                                 </span>
                                 <span class="description" style="margin-left: 0px;">
                                     Publicado: '.$key->tmp.'
@@ -96,7 +105,7 @@
                                     <a href="noticias/'.$key->url.'"><i class="fa fa-eye">
                                     </i></a>
                                 </button>
-                                <button class="btn btn-box-tool" type="button">
+                                <button onClick="status_noticia('.$key->id.','. $estado.')" class="btn btn-box-tool" type="button">
                                     <i class="fa fa-pause">
                                     </i>
                                 </button>
@@ -104,7 +113,7 @@
                                     <i class="fa fa-pencil-square-o">
                                     </i>
                                 </button>
-                                <button class="btn btn-box-tool" type="button">
+                                <button onClick="status_noticia('.$key->id.',3)" class="btn btn-box-tool" type="button">
                                     <i class="fa fa-trash-o">
                                     </i>
                                 </button>
