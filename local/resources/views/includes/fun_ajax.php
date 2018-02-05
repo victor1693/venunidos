@@ -19,9 +19,30 @@ function endPage(parametro){
 
 
 /****************************************/
-// FUNCIONES PARA LAS NOTICIAS
+// FUNCIONES PARA LAS ARTICULOS
 /****************************************/
- 
+
+function status_articulos(id,estado) // actualiza lo estados
+	{ 
+			$.ajax({
+			  method: "POST",
+			  dataType:"json",
+			  url: "status_articulo",
+			  data: { 
+			_token: CSRF_TOKEN,
+				identificador: id,
+				valor: estado},			 
+			})
+			  .done(function( datos ) { 
+			  	if(datos==2){alert("El articulo ha sido pausada.");location.reload();}
+			  	if(datos==3){alert("El articulo ha sido eliminada.");location.reload();}
+			  	if(datos==1){alert("Operación realizada con éxito.");location.reload();}
+	           }); 
+	} 
+
+/****************************************/
+// FUNCIONES PARA LAS NOTICIAS
+/****************************************/ 
 
 function status_noticia(id,estado) // actualiza lo estados
 	{ 
@@ -40,8 +61,11 @@ function status_noticia(id,estado) // actualiza lo estados
 			  	if(datos==1){alert("Operación realizada con éxito.");location.reload();}
 	           }); 
 	} 
-function publicar_noticia() //Crea la noticia
+function publicar_noticia(parametro) //Crea la noticia
 	{
+		dir=0;
+		if(parametro=="noticia"){dir="noticia";}
+		if(parametro=="articulo"){dir="articulo";} 
 		if($("#alcance").val()==""){alert('Debe seleccionar el alcance de la noticia.');$("#alcance").focus();}
 		else if($("#categoria").val()==""){alert('Debe seleccionar una categoría.');$("#categoria").focus();}
 		else if($("#titulo").val()==""){alert('Colóquele el titulo a la publicación.');$("#titulo").focus();}
@@ -53,7 +77,7 @@ function publicar_noticia() //Crea la noticia
 			$.ajax({
 			  method: "POST",
 			  dataType:"json",
-			  url: "noticia",
+			  url: dir,
 			  data: { 
 			_token: CSRF_TOKEN,
 				detalle: $("#detalle").val(),

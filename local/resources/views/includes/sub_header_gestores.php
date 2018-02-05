@@ -31,6 +31,12 @@
                                         Noticias
                                     </a>
                                 </li>
+
+                                 <li>
+                                    <a href="/venunidos/garticulos">
+                                        Articulos
+                                    </a>
+                                </li>
                                 
                             </ul>
                         </div>

@@ -49,9 +49,8 @@
                           <!-- small box -->
                           <div class="small-box bg-yellow">
                             <div class="inner">
-                              <h3>0</h3>
-
-                              <p>Publicaciones</p>
+                              <h3><?php echo $articulos[0]->cantidad?></h3> 
+                              <p>Artículos</p>
                             </div>
                             <div class="icon">
                               <i class="ion ion-pie-graph"></i>

@@ -61,7 +61,7 @@
                         </input>
                     </form>
                     <div class="text-right">
-                        <buttom id="publicar_noticia" onClick="publicar_noticia()" class="btn btn-xs btn-primary " href="" style="margin-top: 5px;" target="_blank">
+                        <buttom id="publicar_noticia" onClick="publicar_noticia('noticia')" class="btn btn-xs btn-primary " href="" style="margin-top: 5px;" target="_blank">
                             Publicar
                         </buttom>
                     </div>

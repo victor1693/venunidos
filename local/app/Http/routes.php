@@ -32,12 +32,16 @@ Route::post('gestores', 'con_manager@log'); //iniciar sesion usuario
 
 Route::group(['middleware' =>'gestores'], function () {
 Route::get('noticias/{id}', 'con_noticia@detalle'); //iniciar sesion usuario
+Route::get('articulo/{id}', 'con_articulos@detalle'); //iniciar sesion usuario
 Route::post('noticia', 'con_noticia@create'); //iniciar sesion usuario
+Route::post('articulo', 'con_articulos@create'); //iniciar sesion usuario
 
 Route::get('dash', 'con_manager@dash');
 
 Route::get('gestor_close', 'con_manager@close'); //Cierra la sesion
 Route::get('gnoticias', 'con_manager@noticias'); //Cierra la sesion
-Route::get('gpost', 'con_manager@post'); //Cierra la sesion
+Route::get('garticulos', 'con_manager@articulos'); //Cierra la sesion
 Route::post('status_noticia', 'con_manager@estados'); //Cierra la sesion
+
+Route::post('status_articulo', 'con_manager@estados_articulo'); //Cierra la sesion
 });

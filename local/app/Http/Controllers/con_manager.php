@@ -64,11 +64,16 @@ class con_manager extends Controller {
 	{
 		
 			try {
-					$sqlNoticial="SELECT count(id) as cantidad FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." ORDER BY tmp DESC";
+					$sqlNoticial="SELECT count(id) as cantidad FROM tbl_noticias WHERE id_usuario = ".session()->get('gestor_id')." AND estado <> 3 ORDER BY tmp DESC";
 		            $datosNoticias=DB::select($sqlNoticial);
+
+		            $sqlAticulos="SELECT count(id) as cantidad FROM tbl_articulos WHERE id_usuario = ".session()->get('gestor_id')." AND estado <> 3 ORDER BY tmp DESC";
+		            $datosArticulos=DB::select($sqlAticulos);
+
 
 		            $vista=View::make('dash');
                  	$vista->datos=$datosNoticias;
+                 	$vista->articulos=$datosArticulos;
                  	return $vista;
 			} catch (QueryException $e) {
 				return Redirect('error');
@@ -94,6 +99,27 @@ class con_manager extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+	public function articulos() //Articulos
+	{
+
+		try {
+					$sqlNoticial="SELECT * FROM tbl_articulos WHERE id_usuario = ".session()->get('gestor_id')." AND estado <> 3 ORDER BY tmp DESC";
+		            $datosNoticias=DB::select($sqlNoticial);
+
+		            $cantidadNoticias="SELECT count(id) as cantidad FROM tbl_articulos WHERE id_usuario = ".session()->get('gestor_id')." AND estado <> 3 ORDER BY tmp DESC";
+		            $cantidad=DB::select($cantidadNoticias);
+
+
+		            $vista=View::make('informacion_gestor');
+                 	$vista->datos=$datosNoticias;
+                 	$vista->cantidad=$cantidad; 
+                 	return $vista;
+			} catch (QueryException $e) {
+				return Redirect('error');
+			} 
+	}
+
 	public function noticias()
 	{
 
@@ -120,7 +146,7 @@ class con_manager extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function estados()
+	public function estados()//control de estados de las noticias
 	{
 		try {
 					$sql="UPDATE tbl_noticias SET estado = ".$_POST['valor']." WHERE id= ".$_POST['identificador']." ";
@@ -130,7 +156,16 @@ class con_manager extends Controller {
 					echo 0;
 			}  
 	}
-
+	public function estados_articulo()//control de estados de las noticias
+	{
+		try {
+					$sql="UPDATE tbl_articulos SET estado = ".$_POST['valor']." WHERE id= ".$_POST['identificador']." ";
+		            $datos=DB::select($sql);
+  					echo $_POST['valor'];
+			} catch (QueryException $e) {
+					echo 0;
+			}  
+	}
 	/**
 	 * Remove the specified resource from storage.
 	 *
